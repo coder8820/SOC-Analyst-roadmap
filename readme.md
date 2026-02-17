@@ -182,8 +182,9 @@ If you want to improve detection logic or add new use cases, feel free to submit
 **Kumail Abbas**  
 Aspiring SOC Analyst | Blue Team Enthusiast  
 
-LinkedIn: (Add your link here)  
-GitHub: (Add your profile link)
+LinkedIn: www.linkedin.com/in/kumail-abbas-security
+  
+GitHub: www.github.com/coder8820
 
 ---
 
