@@ -1,0 +1,268 @@
+Q1: What is a SOC?
+A Security Operations Center (SOC) is a centralized unit responsible for monitoring, detecting, analyzing, and responding to cybersecurity incidents in real time. The SOC team uses tools like SIEM, EDR, IDS/IPS, and threat intelligence platforms to identify suspicious activity and protect organizational assets.
+
+The primary goal of a SOC is to reduce the time to detect (MTTD) and time to respond (MTTR) to threats.
+
+---
+
+Q2: What are the main responsibilities of a SOC Analyst?
+Ans: 
+Monitor security alerts
+Triage alerts
+Investigate suspicious activity
+Analyze logs (Windows, Linux, Firewall, Proxy)
+Escalate incidents
+Document findings
+Contain threats
+Recommend remediation
+
+---
+
+Q3: What is alert triage?
+Alert triage is the process of analyzing a security alert to determine:
+Is it a false positive?
+Is it malicious?
+What is the severity?
+What action is required?
+It involves validating logs, checking context, and assessing impact.
+
+--------------------------------
+
+🔹 PART 2: WINDOWS LOG ANALYSIS
+---------------------------------
+Q4: What is Event ID 4625?
+Event ID 4625 indicates a failed login attempt in Windows. It includes:
+Account name
+Logon type
+Source IP address
+Failure reason
+Repeated 4625 events may indicate brute-force attempts.
+
+---
+
+Q5: What is Event ID 4624?
+Successful login event.
+Important fields:
+Logon Type
+Source Network Address
+Account Name
+
+---
+Q6: What does Logon Type 10 mean?
+Remote Interactive Login (RDP).
+If many 4625 type 10 attempts appear → possible RDP brute-force attack.
+
+---
+
+Q7: How would you detect brute force in logs?
+Look for repeated 4625 failures
+Same username targeted
+Same source IP
+High frequency within short time
+Check if followed by 4624 (successful login)
+If yes → likely compromise.
+
+----------------------------------------------
+
+🔹 PART 3: NETWORKING QUESTIONS
+----------------------------------------------
+Q8: Explain TCP 3-way handshake.
+1- SYN
+
+2- SYN-ACK
+
+3- ACK
+Establishes connection between client and server.
+
+---
+
+9: What is the difference between TCP and UDP?
+  TCP	                           UDP
+Reliable	                 Unreliable
+Connection-oriented	         Connectionless
+Slower	                     Faster
+Used for HTTP, FTP	         Used for DNS, streaming
+
+---
+
+Q10: What is port 3389?
+RDP (Remote Desktop Protocol)
+If exposed publicly → high brute-force risk.
+
+---
+
+Q11: What is DNS?
+Domain Name System translates domain names to IP addresses.
+Attack example: DNS tunneling.
+
+--------------------------------------------------------
+
+🔹 PART 4: LINUX QUESTIONS
+--------------------------------------------------------
+
+Q12: Where are authentication logs stored in Linux?
+/var/log/auth.log (Ubuntu)
+/var/log/secure (CentOS)
+
+---
+
+Q13: How to detect SSH brute force in Linux?
+Check auth.log for:
+        Failed password for invalid user
+        Failed password from <IP>
+Count repeated attempts from same IP.
+
+---
+
+Q14: What is sudo?
+Allows users to execute commands as root.
+Abuse of sudo can indicate privilege escalation.
+
+-------------------------------------------------
+
+🔹 PART 5: SIEM & DETECTION
+-------------------------------------------------
+
+Q15: What is a SIEM?
+Security Information and Event Management system.
+It:
+Collects logs
+Correlates events
+Detects patterns
+Generates alerts
+
+Examples:
+Splunk
+ELK
+QRadar
+
+---
+Q16: What is false positive?
+An alert triggered for legitimate activity.
+SOC analyst must reduce false positives.
+
+---
+
+Q17: What is MITRE ATT&CK?
+A framework mapping attacker tactics and techniques.
+Example:
+Brute Force → T1110
+
+-------------------------------------------------------
+
+🔹 PART 6: SCENARIO-BASED QUESTIONS
+-------------------------------------------------------
+
+Q18: You receive 200 failed login alerts in 2 minutes. What do you do?
+Validate logs
+
+Identify source IP
+
+Check targeted accounts
+
+Check for successful login after failures
+
+Determine severity
+
+Block IP (if malicious)
+
+Reset passwords
+
+Document incident
+
+Escalate if needed
+
+
+----
+
+Q19: A user reports suspicious login from another country.
+Steps:
+
+Check login logs
+
+Verify IP geolocation
+
+Check MFA logs
+
+Confirm if user was traveling
+
+Reset password
+
+Review account activity
+
+---
+
+Q20: How would you handle a phishing email?
+Analyze email headers
+
+Check sender domain
+
+Inspect attachments
+
+Check URLs
+
+Sandbox analysis
+
+Block sender
+
+Educate user
+
+-------------------------------------------------
+
+🔹 PART 7: PYTHON & AUTOMATION QUESTIONS
+--------------------------------------------------
+
+Q21: How can Python help in SOC?
+Log parsing
+
+Automation
+
+Alert processing
+
+Data extraction
+
+IOC matching
+
+-----
+
+Q22: How would you write a brute-force detection script?
+Answer structure:
+
+Read file
+
+Parse lines
+
+Count failed attempts
+
+Store in dictionary
+
+Compare against threshold
+
+Generate alert
+
+------------------------------------------
+
+🔹 PART 8: BEHAVIORAL QUESTIONS
+------------------------------------------
+
+Q23: Why do you want to work in SOC?
+I am passionate about defensive security and threat detection. I enjoy log analysis, investigating anomalies, and understanding attacker behavior. SOC provides hands-on experience in monitoring real threats and continuously improving security posture.
+
+---
+
+Q24: How do you handle stress during incidents?
+During incidents, I stay calm, follow structured investigation methodology, prioritize based on severity, and document findings clearly to avoid mistakes.
+
+----------------------------------------
+🔥 ADVANCED QUESTIONS
+----------------------------------------
+
+1- What is lateral movement?
+Attacker moving inside network after initial compromise.
+
+2- What is EDR?
+Endpoint Detection & Response tool that monitors endpoint behavior.
+
+3- What is MTTD & MTTR?
+Mean Time To Detect
+Mean Time To Respond
