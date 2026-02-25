@@ -73,3 +73,58 @@ Successful login from 192.168.1.10
 ---
 
 # 📊 Sample Output
+⚠ ALERT: Suspicious Activity Detected
+
+IP Address: 192.168.1.10
+Failed Attempts: 8
+Status: Potential Brute Force Attack
+
+
+---
+
+# 📘 SOC Relevance
+
+This project simulates how SIEM systems:
+
+- Aggregate logs
+- Detect patterns
+- Trigger alerts
+- Support SOC analysts in investigation
+
+---
+
+# 🔐 Defensive Value
+
+Helps detect:
+
+- Password guessing attacks
+- Account compromise attempts
+- Unauthorized access attempts
+
+---
+
+# 🚀 Future Enhancements
+
+- Add CSV export
+- Add JSON output
+- Integrate with ELK stack
+- Email alert automation
+- Real-time monitoring mode
+- Add MITRE ATT&CK mapping
+
+---
+
+# 🎯 Skills Demonstrated
+
+✔ Python scripting  
+✔ Automation  
+✔ Log analysis  
+✔ Security detection logic  
+✔ Blue Team mindset  
+
+---
+
+# 👨‍💻 Author
+
+Kumail Abbas  
+Aspiring SOC Analyst | Python Automation | Blue Team
