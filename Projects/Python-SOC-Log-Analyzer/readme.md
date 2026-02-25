@@ -43,3 +43,33 @@ The tool:
 # 📂 Sample Log Format
 
 Example log entries:
+Failed login from 192.168.1.10
+Failed login from 192.168.1.10
+Failed login from 192.168.1.10
+Successful login from 192.168.1.10
+
+
+---
+
+# 🔍 Detection Logic
+
+1. Parse each line
+2. Identify failed login entries
+3. Count failed attempts per IP
+4. If failures > threshold (e.g., 5):
+   - Mark IP as suspicious
+   - Generate alert
+
+---
+
+# ⚙️ Features
+
+✔ Brute-force detection  
+✔ Threshold-based alerting  
+✔ IP aggregation  
+✔ Report generation  
+✔ Clean structured output  
+
+---
+
+# 📊 Sample Output
