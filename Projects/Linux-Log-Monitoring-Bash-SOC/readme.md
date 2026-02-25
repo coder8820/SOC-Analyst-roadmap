@@ -125,6 +125,7 @@ This project demonstrates:
 - Cron-based monitoring
 - Integration with SIEM
 - Dockerized monitoring lab
+ woring on theses...
 
 ---
 
